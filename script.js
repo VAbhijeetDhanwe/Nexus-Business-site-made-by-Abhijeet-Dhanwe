@@ -1,4 +1,4 @@
- // Mobile Menu Toggle
+// Mobile Menu Toggle
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.querySelector('.nav-links');
         
@@ -24,9 +24,9 @@
         
         function showTestimonial(index) {
             testimonials.forEach(testimonial => {
-                testimonial.style.display = 'none';
+                testimonial.classList.remove('active');
             });
-            testimonials[index].style.display = 'block';
+            testimonials[index].classList.add('active');
         }
         
         prevBtn.addEventListener('click', () => {
@@ -41,6 +41,12 @@
         
         // Initialize
         showTestimonial(currentTestimonial);
+        
+        // Auto rotate testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 8000);
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
