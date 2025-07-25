@@ -1,4 +1,4 @@
-// Mobile Menu Toggle
+
         const mobileToggle = document.getElementById('mobileToggle');
         const navLinks = document.querySelector('.nav-links');
         
@@ -6,7 +6,6 @@
             navLinks.classList.toggle('active');
         });
         
-        // Header scroll effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
@@ -15,8 +14,7 @@
                 header.classList.remove('scrolled');
             }
         });
-        
-        // Testimonial Navigation
+
         const prevBtn = document.getElementById('prevTestimonial');
         const nextBtn = document.getElementById('nextTestimonial');
         const testimonials = document.querySelectorAll('.testimonial');
@@ -38,17 +36,17 @@
             currentTestimonial = (currentTestimonial + 1) % testimonials.length;
             showTestimonial(currentTestimonial);
         });
-        
-        // Initialize
+
+
         showTestimonial(currentTestimonial);
         
-        // Auto rotate testimonials
+        
         setInterval(() => {
             currentTestimonial = (currentTestimonial + 1) % testimonials.length;
             showTestimonial(currentTestimonial);
         }, 8000);
         
-        // Smooth scrolling for anchor links
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
